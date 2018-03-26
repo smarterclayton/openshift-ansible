@@ -119,9 +119,6 @@
     local_facts:
       no_proxy_etcd_host_ips: "{{ openshift_no_proxy_etcd_host_ips }}"
 
-- name: Update journald config
-  include_tasks: journald.yml
-
 - name: Create session secrets file
   template:
     dest: "{{ openshift.master.session_secrets_file }}"
