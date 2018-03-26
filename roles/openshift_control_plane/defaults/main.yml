@@ -143,8 +143,6 @@ openshift_master_image_config_latest: "{{ openshift_master_image_config_latest_d
 openshift_master_config_dir_default: "{{ openshift.common.config_base ~ '/master' if openshift is defined and 'common' in openshift else '/etc/origin/master' }}"
 openshift_master_config_dir: "{{ openshift_master_config_dir_default }}"
 
-openshift_master_bootstrap_enabled: False
-
 openshift_master_csr_sa: node-bootstrapper
 openshift_master_csr_namespace: openshift-infra
 

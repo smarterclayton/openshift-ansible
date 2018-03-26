@@ -187,7 +187,10 @@
     name: "{{ mktemp.stdout }}"
   changed_when: False
 
-- name: Report console errors
-  fail:
-    msg: Console install failed.
-  when: console_health.stdout != 'ok'
+- when: console_health.stdout != 'ok'
+  block:
+  - pause:
+      minutes: 30
+  - name: Report console errors
+    fail:
+      msg: Console install failed.
